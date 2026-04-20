@@ -13,6 +13,10 @@ Topik: Membangun Toko Web Online (Frontend & Backend Development for Web)
   - Backend: Node.js + Express 4 + Mongoose 8
   - Database: MongoDB Atlas (cloud)
 - **Kategori Produk**: Indoor, Outdoor, Sukulen, Pot & Aksesoris
+- **Live Demo**:
+  - Frontend: <https://rumah-daun.vercel.app>
+  - API Backend: <https://toko-tanaman-api.vercel.app>
+  - Repository: <https://github.com/bagjaalam1/toko-online>
 
 ---
 

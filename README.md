@@ -2,6 +2,11 @@
 
 Aplikasi web toko online sederhana untuk **Tugas Personal Lab Week 6**. Stack: React (Vite) + Node.js/Express + MongoDB Atlas.
 
+## Live Demo
+
+- Frontend: <https://rumah-daun.vercel.app>
+- API Backend: <https://toko-tanaman-api.vercel.app>
+
 ## Struktur Project
 
 ```

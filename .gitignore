@@ -9,3 +9,5 @@ Thumbs.db
 
 backend/package-lock.json
 frontend/package-lock.json
+
+.vercel/
