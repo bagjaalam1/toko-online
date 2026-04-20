@@ -168,14 +168,14 @@ export default function AdminForm() {
           </div>
 
           <div>
-            <label htmlFor="image">URL Gambar</label>
+            <label htmlFor="image">Path atau URL Gambar</label>
             <input
               id="image"
               name="image"
-              type="url"
+              type="text"
               value={form.image}
               onChange={handleChange}
-              placeholder="https://..."
+              placeholder="/images/nama.jpg atau https://..."
             />
           </div>
 
