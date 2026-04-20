@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: toko-tanaman-api
+    runtime: node
+    region: singapore
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: NODE_VERSION
+        value: "20"
