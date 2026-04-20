@@ -1,0 +1,160 @@
+:root {
+  --cream: #f7f2ea;
+  --cream-soft: #fbf8f2;
+  --beige: #e8dcc8;
+  --sand: #d9c9b0;
+  --clay: #b89574;
+  --clay-dark: #8a6a4f;
+  --moss: #8a9a7b;
+  --moss-dark: #5e6f52;
+  --terracotta: #c08464;
+  --ink: #3a332b;
+  --ink-soft: #6b6258;
+  --border: #e6ddd0;
+  --shadow: 0 2px 16px rgba(58, 51, 43, 0.06);
+  --shadow-hover: 0 6px 24px rgba(58, 51, 43, 0.1);
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+a {
+  color: var(--clay-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--terracotta);
+}
+
+button,
+.btn {
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--clay);
+  background: var(--clay);
+  color: var(--cream-soft);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--clay-dark);
+  border-color: var(--clay-dark);
+}
+
+button.ghost,
+.btn.ghost {
+  background: transparent;
+  color: var(--clay-dark);
+}
+
+button.ghost:hover,
+.btn.ghost:hover {
+  background: var(--beige);
+  color: var(--ink);
+}
+
+button.danger,
+.btn.danger {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+button.danger:hover,
+.btn.danger:hover {
+  background: #a56b4e;
+  border-color: #a56b4e;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--cream-soft);
+  border-radius: var(--radius);
+  width: 100%;
+  color: var(--ink);
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--clay);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
