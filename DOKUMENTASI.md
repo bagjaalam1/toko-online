@@ -16,7 +16,6 @@ Topik: Membangun Toko Web Online (Frontend & Backend Development for Web)
 - **Live Demo**:
   - Frontend: <https://rumah-daun.vercel.app>
   - API Backend: <https://toko-tanaman-api.vercel.app>
-  - Repository: <https://github.com/bagjaalam1/toko-online>
 
 ---
 
