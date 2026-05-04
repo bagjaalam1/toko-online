@@ -1,6 +1,10 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext.jsx";
 
 export default function Navbar() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   const linkStyle = ({ isActive }) => ({
     color: isActive ? "var(--clay-dark)" : "var(--ink-soft)",
     fontWeight: isActive ? 500 : 400,
@@ -8,6 +12,11 @@ export default function Navbar() {
     borderBottom: isActive ? "1px solid var(--clay)" : "1px solid transparent",
     transition: "all 0.2s ease"
   });
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <header
@@ -50,16 +59,34 @@ export default function Navbar() {
             Toko Tanaman Hias
           </span>
         </Link>
-        <nav style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <nav style={{ display: "flex", gap: "1.8rem", alignItems: "center" }}>
           <NavLink to="/" style={linkStyle} end>
             Beranda
           </NavLink>
           <NavLink to="/products" style={linkStyle}>
             Produk
           </NavLink>
-          <NavLink to="/admin" style={linkStyle}>
-            Admin
-          </NavLink>
+          {user ? (
+            <>
+              <NavLink to="/admin" style={linkStyle}>
+                Admin
+              </NavLink>
+              <span style={{ color: "var(--ink-soft)", fontSize: "0.85rem" }}>
+                Halo, {user.name || user.username}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="ghost"
+                style={{ padding: "0.45rem 0.9rem", fontSize: "0.85rem" }}
+              >
+                Keluar
+              </button>
+            </>
+          ) : (
+            <NavLink to="/login" style={linkStyle}>
+              Masuk
+            </NavLink>
+          )}
         </nav>
       </div>
     </header>

@@ -2,6 +2,7 @@ import dns from "dns";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import Product from "./models/Product.js";
+import User from "./models/User.js";
 
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
@@ -82,6 +83,16 @@ const seed = async () => {
     console.log("Old products removed");
     await Product.insertMany(sampleProducts);
     console.log(`${sampleProducts.length} products inserted`);
+
+    const existingAdmin = await User.findOne({ username: "admin" });
+    if (existingAdmin) {
+      console.log("Admin user already exists, skipping");
+    } else {
+      const passwordHash = await User.hashPassword("admin123");
+      await User.create({ username: "admin", passwordHash, name: "Administrator" });
+      console.log("Admin user created (admin / admin123)");
+    }
+
     await mongoose.disconnect();
     console.log("Done");
     process.exit(0);
